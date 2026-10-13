@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-
 <Shell
     x:Class="FilaVirtual.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -10,5 +8,9 @@
     <ShellContent
         Route="LoginPage"
         ContentTemplate="{DataTemplate pages:LoginPage}" />
+
+    <ShellContent
+        Route="HomePage"
+        ContentTemplate="{DataTemplate pages:HomePage}" />
 
 </Shell>

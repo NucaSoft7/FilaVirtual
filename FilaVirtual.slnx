@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="FilaVirtual.csproj" />
+  <Project Path="FilaVirtual.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
 </Solution>
