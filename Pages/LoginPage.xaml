@@ -1,74 +1,287 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
 <ContentPage
     x:Class="FilaVirtual.Pages.LoginPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Iniciar sesión">
+    NavigationPage.HasNavigationBar="False"
+    Shell.NavBarIsVisible="False"
+    BackgroundColor="#EAF2FF">
 
-    <ScrollView>
+    <Grid RowDefinitions="*,Auto">
 
-        <VerticalStackLayout
-            Padding="30"
-            Spacing="20"
-            VerticalOptions="Center">
+        <!-- Fondo degradado -->
+        <Grid Grid.RowSpan="2">
 
-            <VerticalStackLayout
-                Spacing="5"
-                HorizontalOptions="Center">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#DCEAFF" Offset="0.0" />
+                    <GradientStop Color="#F8FAFF" Offset="0.65" />
+                    <GradientStop Color="#D8E8FF" Offset="1.0" />
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <!-- Ondas decorativas inferiores -->
+            <Ellipse
+                WidthRequest="430"
+                HeightRequest="125"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                TranslationY="-48"
+                TranslationX="-65"
+                Fill="#A8D1FF"
+                Opacity="0.65" />
+
+            <Ellipse
+                WidthRequest="410"
+                HeightRequest="105"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                TranslationY="-28"
+                TranslationX="95"
+                Fill="#7DBBFF"
+                Opacity="0.42" />
+
+            <Ellipse
+                WidthRequest="440"
+                HeightRequest="90"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                TranslationY="-5"
+                TranslationX="-70"
+                Fill="#C3DFFF"
+                Opacity="0.8" />
+
+        </Grid>
+
+        <!-- Contenido adaptable -->
+        <ScrollView Grid.Row="0" Grid.RowSpan="2"
+                    VerticalScrollBarVisibility="Never">
+
+            <Grid Padding="20,32,20,12"
+                  RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+
+                <!-- Logotipo de personas -->
+                <Grid Grid.Row="0"
+                      WidthRequest="76"
+                      HeightRequest="68"
+                      HorizontalOptions="Center"
+                      Margin="0,10,0,4">
+
+                    <!-- Persona izquierda -->
+                    <Ellipse
+                        WidthRequest="13"
+                        HeightRequest="13"
+                        Fill="#1260D8"
+                        TranslationX="-19"
+                        TranslationY="-10" />
+
+                    <Border
+                        WidthRequest="12"
+                        HeightRequest="31"
+                        BackgroundColor="#1260D8"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 6"
+                        TranslationX="-19"
+                        TranslationY="12" />
+
+                    <!-- Persona central -->
+                    <Ellipse
+                        WidthRequest="17"
+                        HeightRequest="17"
+                        Fill="#0754D6"
+                        TranslationY="-18" />
+
+                    <Border
+                        WidthRequest="16"
+                        HeightRequest="37"
+                        BackgroundColor="#0754D6"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 7"
+                        TranslationY="10" />
+
+                    <!-- Persona derecha -->
+                    <Ellipse
+                        WidthRequest="13"
+                        HeightRequest="13"
+                        Fill="#1260D8"
+                        TranslationX="19"
+                        TranslationY="-10" />
+
+                    <Border
+                        WidthRequest="12"
+                        HeightRequest="31"
+                        BackgroundColor="#1260D8"
+                        StrokeThickness="0"
+                        StrokeShape="RoundRectangle 6"
+                        TranslationX="19"
+                        TranslationY="12" />
+
+                </Grid>
+
+                <!-- Nombre de la aplicación -->
+                <HorizontalStackLayout
+                    Grid.Row="1"
+                    HorizontalOptions="Center"
+                    Spacing="0"
+                    Margin="0,0,0,2">
+
+                    <Label
+                        Text="Fila"
+                        FontSize="29"
+                        FontAttributes="Bold"
+                        TextColor="#111827" />
+
+                    <Label
+                        Text="Virtual"
+                        FontSize="29"
+                        FontAttributes="Bold"
+                        TextColor="#0754D6" />
+
+                </HorizontalStackLayout>
 
                 <Label
-                    Text="Fila Virtual"
-                    FontSize="36"
+                    Grid.Row="2"
+                    Text="Tu tiempo también cuenta"
+                    FontSize="13"
+                    TextColor="#52678D"
+                    HorizontalTextAlignment="Center"
+                    Margin="0,0,0,28" />
+
+                <!-- Correo -->
+                <Border
+                    Grid.Row="3"
+                    BackgroundColor="#FFFFFF"
+                    Stroke="#CBD9F2"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 11"
+                    HeightRequest="48"
+                    Margin="0,0,0,10">
+
+                    <Grid ColumnDefinitions="42,*"
+                          Padding="8,0">
+
+                        <Label
+                            Text="✉"
+                            FontSize="20"
+                            TextColor="#234777"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center" />
+
+                        <Entry
+                            x:Name="EmailEntry"
+                            Grid.Column="1"
+                            Placeholder="Correo electrónico"
+                            Keyboard="Email"
+                            FontSize="13"
+                            TextColor="#243B60"
+                            PlaceholderColor="#8496B5"
+                            BackgroundColor="Transparent"
+                            VerticalOptions="Center"
+                            ClearButtonVisibility="WhileEditing" />
+
+                    </Grid>
+                </Border>
+
+                <!-- Contraseña -->
+                <Border
+                    Grid.Row="4"
+                    BackgroundColor="#FFFFFF"
+                    Stroke="#CBD9F2"
+                    StrokeThickness="1"
+                    StrokeShape="RoundRectangle 11"
+                    HeightRequest="48"
+                    Margin="0,0,0,18">
+
+                    <Grid ColumnDefinitions="42,*,42"
+                          Padding="8,0">
+
+                        <Label
+                            Text="♙"
+                            FontSize="22"
+                            TextColor="#234777"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center" />
+
+                        <Entry
+                            x:Name="PasswordEntry"
+                            Grid.Column="1"
+                            Placeholder="Contraseña"
+                            IsPassword="True"
+                            FontSize="13"
+                            TextColor="#243B60"
+                            PlaceholderColor="#8496B5"
+                            BackgroundColor="Transparent"
+                            VerticalOptions="Center" />
+
+                        <Label
+                            Grid.Column="2"
+                            Text="◉"
+                            FontSize="19"
+                            TextColor="#52678D"
+                            VerticalOptions="Center"
+                            HorizontalOptions="Center" />
+
+                    </Grid>
+                </Border>
+
+                <!-- Iniciar sesión -->
+                <Button
+                    Grid.Row="5"
+                    Text="Iniciar sesión"
+                    Clicked="OnContinuarClicked"
+                    BackgroundColor="#075CE5"
+                    TextColor="White"
+                    FontSize="14"
                     FontAttributes="Bold"
-                    TextColor="{StaticResource PrimaryColor}"
-                    HorizontalTextAlignment="Center" />
+                    CornerRadius="12"
+                    HeightRequest="49"
+                    Margin="0,0,0,14" />
 
-                <Label
-                    Text="Gestiona tu turno de forma sencilla"
-                    FontSize="15"
-                    TextColor="{StaticResource GrayColor}"
-                    HorizontalTextAlignment="Center" />
+                <!-- Crear cuenta -->
+                <VerticalStackLayout
+                    Grid.Row="6"
+                    Spacing="4"
+                    HorizontalOptions="Center"
+                    Margin="0,0,0,22">
 
-            </VerticalStackLayout>
+                    <Label
+                        Text="¿No tienes una cuenta?"
+                        FontSize="11"
+                        TextColor="#40577C"
+                        HorizontalTextAlignment="Center" />
 
-            <VerticalStackLayout Spacing="8">
+                    <Label
+                        Text="Crear cuenta"
+                        FontSize="12"
+                        FontAttributes="Bold"
+                        TextColor="#0754D6"
+                        HorizontalTextAlignment="Center" />
 
-                <Label
-                    Text="Correo electrónico"
-                    FontAttributes="Bold" />
+                </VerticalStackLayout>
 
-                <Entry
-                    Placeholder="ejemplo@correo.com"
-                    Keyboard="Email" />
+                <!-- Reloj decorativo -->
+                <VerticalStackLayout
+                    Grid.Row="7"
+                    Spacing="3"
+                    HorizontalOptions="Center"
+                    Margin="0,0,0,8">
 
-            </VerticalStackLayout>
+                    <Label
+                        Text="◷"
+                        FontSize="42"
+                        TextColor="#0754D6"
+                        HorizontalTextAlignment="Center" />
 
-            <VerticalStackLayout Spacing="8">
+                    <Label
+                        Text="Menos filas, más tiempo para ti"
+                        FontSize="10"
+                        TextColor="#164A9A"
+                        HorizontalTextAlignment="Center" />
 
-                <Label
-                    Text="Contraseña"
-                    FontAttributes="Bold" />
+                </VerticalStackLayout>
 
-                <Entry
-                    Placeholder="Contraseña"
-                    IsPassword="True" />
+            </Grid>
+        </ScrollView>
 
-            </VerticalStackLayout>
-
-            <Button
-                Text="Iniciar sesión"
-                Margin="0,10,0,0"
-                Clicked="OnContinuarClicked" />
-
-            <Label
-                Text="¿No tienes una cuenta? Crear cuenta"
-                TextColor="{StaticResource PrimaryColor}"
-                HorizontalTextAlignment="Center"
-                FontAttributes="Bold" />
-
-        </VerticalStackLayout>
-
-    </ScrollView>
-
+    </Grid>
 </ContentPage>

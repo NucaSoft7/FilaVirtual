@@ -4,99 +4,475 @@
     x:Class="FilaVirtual.Pages.HomePage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Inicio">
+    Title="Inicio"
+    BackgroundColor="#F5F7FC">
 
-    <ScrollView>
+    <Grid RowDefinitions="*,70">
 
-        <VerticalStackLayout
-            Padding="20"
-            Spacing="20">
+        <!-- CONTENIDO PRINCIPAL -->
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout
+                Padding="20,28,20,25"
+                Spacing="18">
 
-            <VerticalStackLayout Spacing="4">
+                <!-- ENCABEZADO -->
+                <Grid ColumnDefinitions="*,Auto">
 
+                    <VerticalStackLayout
+                        Grid.Column="0"
+                        Spacing="2">
+
+                        <HorizontalStackLayout Spacing="6">
+                            <Label
+                                Text="Hola"
+                                FontSize="28"
+                                FontAttributes="Bold"
+                                TextColor="#111827"
+                                VerticalOptions="Center"/>
+
+                            <Label
+                                Text="👋"
+                                FontSize="24"
+                                VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+
+                        <Label
+                            Text="Bienvenido a FilaVirtual"
+                            FontSize="14"
+                            TextColor="#5E6675"/>
+                    </VerticalStackLayout>
+
+
+                    <!-- NOTIFICACIONES -->
+                    <Border
+                        Grid.Column="1"
+                        WidthRequest="42"
+                        HeightRequest="42"
+                        Padding="0"
+                        BackgroundColor="#087BF5"
+                        StrokeThickness="0"
+                        VerticalOptions="Center">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="21"/>
+                        </Border.StrokeShape>
+
+                        <Label
+                            Text="●"
+                            FontSize="19"
+                            TextColor="White"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+                    </Border>
+
+                </Grid>
+
+
+                <!-- TARJETA TURNO ACTUAL -->
+                <Border
+                    BackgroundColor="#096FE8"
+                    StrokeThickness="0"
+                    Padding="18,15"
+                    HeightRequest="190">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="16"/>
+                    </Border.StrokeShape>
+
+                    <Grid
+                        RowDefinitions="Auto,Auto,Auto,Auto"
+                        ColumnDefinitions="Auto,*">
+
+                        <!-- ICONO TURNO -->
+                        <Border
+                            Grid.Row="0"
+                            Grid.RowSpan="2"
+                            Grid.Column="0"
+                            WidthRequest="45"
+                            HeightRequest="74"
+                            Margin="0,0,14,0"
+                            Padding="0"
+                            BackgroundColor="White"
+                            StrokeThickness="0"
+                            VerticalOptions="Start">
+
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="8"/>
+                            </Border.StrokeShape>
+
+                            <Label
+                                Text="↕"
+                                TextColor="#096FE8"
+                                FontSize="30"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+                        </Border>
+
+
+                        <!-- TURNO -->
+                        <VerticalStackLayout
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Spacing="0">
+
+                            <Label
+                                Text="Tu turno actual"
+                                TextColor="White"
+                                FontSize="14"/>
+
+                            <Grid
+                                ColumnDefinitions="*,Auto"
+                                Margin="0,1,0,0">
+
+                                <Label
+                                    Grid.Column="0"
+                                    Text="A-025"
+                                    TextColor="White"
+                                    FontSize="29"
+                                    FontAttributes="Bold"
+                                    VerticalOptions="Center"/>
+
+                                <!-- ESTADO -->
+                                <Border
+                                    Grid.Column="1"
+                                    BackgroundColor="#DDFBE5"
+                                    StrokeThickness="0"
+                                    Padding="11,5"
+                                    VerticalOptions="Center">
+
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="12"/>
+                                    </Border.StrokeShape>
+
+                                    <Label
+                                        Text="En espera"
+                                        FontSize="10"
+                                        FontAttributes="Bold"
+                                        TextColor="#15803D"/>
+                                </Border>
+
+                            </Grid>
+
+                        </VerticalStackLayout>
+
+
+                        <!-- INFORMACIÓN -->
+                        <VerticalStackLayout
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Spacing="7"
+                            Margin="0,10,0,0">
+
+                            <HorizontalStackLayout Spacing="9">
+
+                                <Label
+                                    Text="♟"
+                                    FontSize="13"
+                                    TextColor="White"/>
+
+                                <Label
+                                    Text="3 personas delante"
+                                    FontSize="13"
+                                    TextColor="White"/>
+                            </HorizontalStackLayout>
+
+
+                            <HorizontalStackLayout Spacing="9">
+
+                                <Label
+                                    Text="⌂"
+                                    FontSize="15"
+                                    TextColor="White"/>
+
+                                <Label
+                                    Text="Clínica Central"
+                                    FontSize="13"
+                                    TextColor="White"/>
+                            </HorizontalStackLayout>
+
+
+                            <HorizontalStackLayout Spacing="9">
+
+                                <Label
+                                    Text="◷"
+                                    FontSize="15"
+                                    TextColor="White"/>
+
+                                <Label
+                                    Text="Hora estimada: 10:30 a. m."
+                                    FontSize="13"
+                                    TextColor="White"/>
+                            </HorizontalStackLayout>
+
+                        </VerticalStackLayout>
+
+                    </Grid>
+
+                </Border>
+
+
+                <!-- ACCIONES -->
                 <Label
-                    Text="Hola"
-                    FontSize="28"
-                    FontAttributes="Bold" />
+                    Text="¿Qué deseas hacer?"
+                    FontSize="17"
+                    FontAttributes="Bold"
+                    TextColor="#101828"
+                    Margin="0,2,0,-5"/>
 
-                <Label
-                    Text="Bienvenido a FilaVirtual"
-                    FontSize="16"
-                    TextColor="{StaticResource GrayColor}" />
+
+                <!-- ESCANEAR QR -->
+                <Border
+                    BackgroundColor="White"
+                    Stroke="#EEF1F6"
+                    StrokeThickness="1"
+                    HeightRequest="64"
+                    Padding="12,0">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="13"/>
+                    </Border.StrokeShape>
+
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="OnEscanearQrClicked"/>
+                    </Border.GestureRecognizers>
+
+                    <Grid ColumnDefinitions="45,*,Auto">
+
+                        <Border
+                            Grid.Column="0"
+                            WidthRequest="39"
+                            HeightRequest="39"
+                            BackgroundColor="#087BF5"
+                            StrokeThickness="0"
+                            VerticalOptions="Center">
+
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="9"/>
+                            </Border.StrokeShape>
+
+                            <Label
+                                Text="▣"
+                                FontSize="22"
+                                TextColor="White"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+                        </Border>
+
+                        <Label
+                            Grid.Column="1"
+                            Text="Escanear código QR"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            TextColor="#202633"
+                            VerticalOptions="Center"
+                            Margin="8,0"/>
+
+                        <Label
+                            Grid.Column="2"
+                            Text="›"
+                            FontSize="27"
+                            TextColor="#475467"
+                            VerticalOptions="Center"/>
+                    </Grid>
+
+                </Border>
+
+
+                <!-- MIS TURNOS -->
+                <Border
+                    BackgroundColor="White"
+                    Stroke="#EEF1F6"
+                    StrokeThickness="1"
+                    HeightRequest="64"
+                    Padding="12,0">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="13"/>
+                    </Border.StrokeShape>
+
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="OnMisTurnosClicked"/>
+                    </Border.GestureRecognizers>
+
+                    <Grid ColumnDefinitions="45,*,Auto">
+
+                        <Border
+                            Grid.Column="0"
+                            WidthRequest="39"
+                            HeightRequest="39"
+                            BackgroundColor="#087BF5"
+                            StrokeThickness="0"
+                            VerticalOptions="Center">
+
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="9"/>
+                            </Border.StrokeShape>
+
+                            <Label
+                                Text="☷"
+                                FontSize="24"
+                                TextColor="White"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+                        </Border>
+
+                        <Label
+                            Grid.Column="1"
+                            Text="Mis turnos"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            TextColor="#202633"
+                            VerticalOptions="Center"
+                            Margin="8,0"/>
+
+                        <Label
+                            Grid.Column="2"
+                            Text="›"
+                            FontSize="27"
+                            TextColor="#475467"
+                            VerticalOptions="Center"/>
+                    </Grid>
+
+                </Border>
+
+
+                <!-- NUEVO TURNO -->
+                <Border
+                    BackgroundColor="White"
+                    Stroke="#EEF1F6"
+                    StrokeThickness="1"
+                    HeightRequest="64"
+                    Padding="12,0">
+
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="13"/>
+                    </Border.StrokeShape>
+
+                    <Border.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="OnNuevoTurnoClicked"/>
+                    </Border.GestureRecognizers>
+
+                    <Grid ColumnDefinitions="45,*,Auto">
+
+                        <Border
+                            Grid.Column="0"
+                            WidthRequest="39"
+                            HeightRequest="39"
+                            BackgroundColor="#087BF5"
+                            StrokeThickness="0"
+                            VerticalOptions="Center">
+
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="9"/>
+                            </Border.StrokeShape>
+
+                            <Label
+                                Text="+"
+                                FontSize="28"
+                                TextColor="White"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+                        </Border>
+
+                        <Label
+                            Grid.Column="1"
+                            Text="Nuevo turno"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            TextColor="#202633"
+                            VerticalOptions="Center"
+                            Margin="8,0"/>
+
+                        <Label
+                            Grid.Column="2"
+                            Text="›"
+                            FontSize="27"
+                            TextColor="#475467"
+                            VerticalOptions="Center"/>
+                    </Grid>
+
+                </Border>
 
             </VerticalStackLayout>
+        </ScrollView>
 
 
-            <!-- Turno actual -->
+        <!-- BARRA DE NAVEGACIÓN INFERIOR -->
+        <Border
+            Grid.Row="1"
+            BackgroundColor="White"
+            Stroke="#E5E7EB"
+            StrokeThickness="1"
+            Padding="20,7">
 
-            <Border
-                BackgroundColor="{StaticResource PrimaryColor}"
-                StrokeThickness="0"
-                Padding="20">
+            <Grid ColumnDefinitions="*,*,*">
 
-                <Border.StrokeShape>
-                    <RoundRectangle CornerRadius="18" />
-                </Border.StrokeShape>
-
-                <VerticalStackLayout Spacing="10">
-
-                    <Label
-                        Text="Tu turno actual"
-                        TextColor="White"
-                        FontSize="16" />
-
-                    <Label
-                        Text="A-025"
-                        TextColor="White"
-                        FontSize="42"
-                        FontAttributes="Bold" />
+                <!-- INICIO -->
+                <VerticalStackLayout
+                    Grid.Column="0"
+                    Spacing="2"
+                    HorizontalOptions="Center">
 
                     <Label
-                        Text="Clínica Central"
-                        TextColor="White"
-                        FontSize="17" />
+                        Text="⌂"
+                        FontSize="19"
+                        TextColor="#087BF5"
+                        HorizontalTextAlignment="Center"/>
 
                     <Label
-                        Text="3 personas delante"
-                        TextColor="White"
-                        FontSize="15" />
-
-                    <Label
-                        Text="En espera"
-                        TextColor="White"
-                        FontAttributes="Bold" />
-
+                        Text="Inicio"
+                        FontSize="10"
+                        FontAttributes="Bold"
+                        TextColor="#087BF5"/>
                 </VerticalStackLayout>
 
-            </Border>
+
+                <!-- TURNOS -->
+                <VerticalStackLayout
+                    Grid.Column="1"
+                    Spacing="2"
+                    HorizontalOptions="Center">
+
+                    <Label
+                        Text="◷"
+                        FontSize="19"
+                        TextColor="#667085"
+                        HorizontalTextAlignment="Center"/>
+
+                    <Label
+                        Text="Turnos"
+                        FontSize="10"
+                        TextColor="#667085"/>
+                </VerticalStackLayout>
 
 
-            <!-- Acciones -->
+                <!-- PERFIL -->
+                <VerticalStackLayout
+                    Grid.Column="2"
+                    Spacing="2"
+                    HorizontalOptions="Center">
 
-            <Label
-                Text="Acciones"
-                FontSize="20"
-                FontAttributes="Bold" />
+                    <Label
+                        Text="♙"
+                        FontSize="19"
+                        TextColor="#667085"
+                        HorizontalTextAlignment="Center"/>
 
-            <Button
-                Text="Escanear código QR"
-                Clicked="OnEscanearQrClicked" />
+                    <Label
+                        Text="Perfil"
+                        FontSize="10"
+                        TextColor="#667085"/>
+                </VerticalStackLayout>
 
-            <Button
-                 Text="Mis turnos"
-                 BackgroundColor="{StaticResource SecondaryColor}"
-                 TextColor="{StaticResource PrimaryColor}"
-                 Clicked="OnMisTurnosClicked" />
+            </Grid>
 
-            <Button
-                Text="Nuevo turno"
-                BackgroundColor="White"
-                TextColor="{StaticResource PrimaryColor}"
-                BorderColor="{StaticResource PrimaryColor}"
-                BorderWidth="1" />
+        </Border>
 
-        </VerticalStackLayout>
-
-    </ScrollView>
+    </Grid>
 
 </ContentPage>

@@ -20,4 +20,9 @@ public partial class HomePage : ContentPage
     {
         await Shell.Current.GoToAsync("QrScannerPage");
     }
+
+    private async void OnNuevoTurnoClicked(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("TurnoFormPage");
+    }
 }

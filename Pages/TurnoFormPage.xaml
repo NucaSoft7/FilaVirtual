@@ -4,126 +4,240 @@
     x:Class="FilaVirtual.Pages.TurnoFormPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Nuevo turno">
+    Title="Nuevo turno"
+    BackgroundColor="#F7F9FD"
+    Shell.NavBarIsVisible="False">
 
-    <ScrollView>
+    <Grid RowDefinitions="Auto,*,Auto">
 
-        <VerticalStackLayout
-            Padding="20"
-            Spacing="18">
+        <!-- ====================================== -->
+        <!-- ENCABEZADO -->
+        <!-- ====================================== -->
 
-            <VerticalStackLayout Spacing="5">
+        <Grid
+            Grid.Row="0"
+            Padding="20,24,20,10"
+            ColumnDefinitions="35,*">
+
+            <!-- Flecha volver -->
+            <Label
+                Grid.Column="0"
+                Text="‹"
+                FontSize="35"
+                TextColor="#344054"
+                VerticalOptions="Center"
+                HorizontalOptions="Start"/>
+
+            <VerticalStackLayout
+                Grid.Column="1"
+                Spacing="0"
+                HorizontalOptions="Center"
+                Margin="-35,0,0,0">
 
                 <Label
                     Text="Nuevo turno"
-                    FontSize="28"
-                    FontAttributes="Bold" />
+                    FontSize="20"
+                    FontAttributes="Bold"
+                    TextColor="#101828"
+                    HorizontalTextAlignment="Center"/>
 
                 <Label
                     Text="Completa los datos del turno"
-                    TextColor="{StaticResource GrayColor}" />
+                    FontSize="11"
+                    TextColor="#667085"
+                    HorizontalTextAlignment="Center"/>
 
             </VerticalStackLayout>
 
+        </Grid>
 
-            <VerticalStackLayout Spacing="7">
 
-                <Label
-                    Text="Número de turno"
-                    FontAttributes="Bold" />
+        <!-- ====================================== -->
+        <!-- FORMULARIO -->
+        <!-- ====================================== -->
 
-                <Entry
-                    Placeholder="Ej. A-025" />
+        <ScrollView Grid.Row="1">
+
+            <VerticalStackLayout
+                Padding="20,4,20,15"
+                Spacing="10">
+
+
+                <!-- NÚMERO DE TURNO -->
+                <VerticalStackLayout Spacing="4">
+
+                    <Label
+                        Text="Número de turno"
+                        FontSize="12"
+                        FontAttributes="Bold"
+                        TextColor="#1D2939"/>
+
+                    <Border
+                        BackgroundColor="Transparent"
+                        Stroke="#D9E1EC"
+                        StrokeThickness="1"
+                        HeightRequest="42"
+                        Padding="10,0">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="8"/>
+                        </Border.StrokeShape>
+
+                        <Grid ColumnDefinitions="25,*">
+
+                            <Label
+                                Grid.Column="0"
+                                Text="♙"
+                                FontSize="15"
+                                TextColor="#667085"
+                                VerticalOptions="Center"/>
+
+                            <Entry
+                                Grid.Column="1"
+                                Placeholder="Ej. A-025"
+                                PlaceholderColor="#98A2B3"
+                                TextColor="#101828"
+                                FontSize="12"
+                                BackgroundColor="Transparent"
+                                VerticalOptions="Center"/>
+
+                        </Grid>
+                    </Border>
+
+                </VerticalStackLayout>
+
+
+                <!-- NEGOCIO -->
+                <VerticalStackLayout Spacing="4">
+
+                    <Label
+                        Text="Negocio"
+                        FontSize="12"
+                        FontAttributes="Bold"
+                        TextColor="#1D2939"/>
+
+                    <Border
+                        BackgroundColor="Transparent"
+                        Stroke="#D9E1EC"
+                        StrokeThickness="1"
+                        HeightRequest="42"
+                        Padding="10,0">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="8"/>
+                        </Border.StrokeShape>
+
+                        <Grid ColumnDefinitions="25,*">
+
+                            <Label
+                                Grid.Column="0"
+                                Text="⌂"
+                                FontSize="15"
+                                TextColor="#667085"
+                                VerticalOptions="Center"/>
+
+                            <Entry
+                                Grid.Column="1"
+                                Placeholder="Nombre del negocio"
+                                PlaceholderColor="#98A2B3"
+                                TextColor="#101828"
+                                FontSize="12"
+                                BackgroundColor="Transparent"/>
+
+                        </Grid>
+
+                    </Border>
+
+                </VerticalStackLayout>
+
+
+                <!-- SERVICIO -->
+                <VerticalStackLayout Spacing="4">
+
+                    <Label
+                        Text="Servicio"
+                        FontSize="12"
+                        FontAttributes="Bold"
+                        TextColor="#1D2939"/>
+
+                    <Border
+                        BackgroundColor="Transparent"
+                        Stroke="#D9E1EC"
+                        StrokeThickness="1"
+                        HeightRequest="42"
+                        Padding="10,0">
+
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="8"/>
+                        </Border.StrokeShape>
+
+                        <Grid ColumnDefinitions="25,*">
+
+                            <Label
+                                Grid.Column="0"
+                                Text="▤"
+                                FontSize="14"
+                                TextColor="#667085"
+                                VerticalOptions="Center"/>
+
+                            <Entry
+                                Grid.Column="1"
+                                Placeholder="Servicio solicitado"
+                                PlaceholderColor="#98A2B3"
+                                TextColor="#101828"
+                                FontSize="12"
+                                BackgroundColor="Transparent"/>
+
+                        </Grid>
+
+                    </Border>
+
+                </VerticalStackLayout>
+
+
+                <!-- FECHA -->
+                <VerticalStackLayout Spacing="4">
+
+                    <Label
+                        Text="Fecha"
+                        FontSize="12"
+                        FontAttributes="Bold"
+                        TextColor="#1D2939"/>
+
+                    <Border
+                        BackgroundColor="Transparent"
+                        Stroke="#D9E1EC"
+                        StrokeThickness="1"
+                        HeightRequest="42"
+                        Padding="10,0">
+                    </Border>
+
+                </VerticalStackLayout>
 
             </VerticalStackLayout>
 
-
-            <VerticalStackLayout Spacing="7">
-
-                <Label
-                    Text="Negocio"
-                    FontAttributes="Bold" />
-
-                <Entry
-                    Placeholder="Nombre del negocio" />
-
-            </VerticalStackLayout>
+        </ScrollView>
 
 
-            <VerticalStackLayout Spacing="7">
+        <!-- BOTÓN GUARDAR -->
 
-                <Label
-                    Text="Servicio"
-                    FontAttributes="Bold" />
-
-                <Entry
-                    Placeholder="Servicio solicitado" />
-
-            </VerticalStackLayout>
-
-
-            <VerticalStackLayout Spacing="7">
-
-                <Label
-                    Text="Fecha"
-                    FontAttributes="Bold" />
-
-                <DatePicker />
-
-            </VerticalStackLayout>
-
-
-            <VerticalStackLayout Spacing="7">
-
-                <Label
-                    Text="Hora aproximada"
-                    FontAttributes="Bold" />
-
-                <TimePicker />
-
-            </VerticalStackLayout>
-
-
-            <VerticalStackLayout Spacing="7">
-
-                <Label
-                    Text="Personas delante"
-                    FontAttributes="Bold" />
-
-                <Entry
-                    Placeholder="Ej. 3"
-                    Keyboard="Numeric" />
-
-            </VerticalStackLayout>
-
-
-            <VerticalStackLayout Spacing="7">
-
-                <Label
-                    Text="Estado"
-                    FontAttributes="Bold" />
-
-                <Picker
-                    Title="Selecciona el estado">
-
-                    <Picker.Items>
-                        <x:String>En espera</x:String>
-                        <x:String>Próximo</x:String>
-                        <x:String>Atendiendo</x:String>
-                        <x:String>Completado</x:String>
-                    </Picker.Items>
-
-                </Picker>
-
-            </VerticalStackLayout>
-
+        <Grid
+            Grid.Row="2"
+            Padding="20,8,20,20"
+            BackgroundColor="#F7F9FD">
 
             <Button
-                Text="Guardar turno"
-                Margin="0,10,0,0" />
+                Text="▣  Guardar turno"
+                HeightRequest="50"
+                CornerRadius="10"
+                BackgroundColor="#087BF5"
+                TextColor="White"
+                FontSize="14"
+                FontAttributes="Bold"/>
 
-        </VerticalStackLayout>
+        </Grid>
 
-    </ScrollView>
+    </Grid>
 
 </ContentPage>
+ 
